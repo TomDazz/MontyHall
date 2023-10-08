@@ -1,0 +1,340 @@
+/* Common styles for doors */
+.door {
+  display: flex;
+  flex-direction: column;
+  align-items: middle;
+  justify-content: middle;
+  padding: 1vw;
+  margin: 0.5vw;
+  border: 0.2vw solid #000;
+  cursor: pointer;
+  font-size: 1.2vw;
+  width: 8vw;
+  height: 15vw;
+  background-color: #f2f2f2;
+  border-radius: 0.3vw;
+  color: black;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Remove margin for body */
+  height: 100vh; /* Make body height cover the screen */
+  display: flex;
+  flex-direction: row;
+}
+h1 {
+  text-align: center;
+  font-size: 2vw; /* Smaller font size */
+}
+#game {
+  margin-top: 3.5vw; /* Smaller margin for less spacing */
+  text-align: center;
+  font-size: 1.1vw; /* Smaller font size */
+  margin-left: 14.8vw;
+  
+}
+#doors {
+display: flex;
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+margin-top: 1.3vw;
+height: 60%; /* Adjust the height as needed */
+
+
+}
+
+.door {
+  padding: 1.5vw; /* Smaller padding for smaller clickable area */
+  margin: 1vw; /* Smaller margin for less spacing */
+  border: 0.3vw solid #000; /* Smaller border thickness */
+  cursor: pointer;
+  font-size: 2vw; /* Smaller font size */
+   margin-top: 0.2vw; /* Adjust the margin as needed */
+}
+.selected {
+  background-color: lightblue;
+}
+/* Style for red "opened" text and border */
+.opened {
+  border: 0.3vw solid red;
+  color: red;
+}
+.car {
+  color: rgb(0, 0, 0);
+}
+
+#try-again-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5vw; /* Smaller margin for less spacing */
+}
+#try-again {
+  display: none;
+  font-size: 2vw; /* Smaller font size */
+}
+#percentage {
+  display: none;
+  margin-top: 1.5vw; /* Smaller margin for less spacing */
+  font-size: 2vw; /* Smaller font size */
+}
+/* Additional styles for responsiveness */
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+  h1 {
+    font-size: 1.5vw;
+  }
+  #game {
+    font-size: 1.5vw;
+  }
+  #doors {
+    margin-top: 1vw;
+  }
+  .door {
+    padding: 1vw;
+    margin: 0.5vw;
+    font-size: 1.5vw;
+  }
+  #try-again-container {
+    margin-top: 1vw;
+  }
+  #try-again {
+    font-size: 1.5vw;
+  }
+  #percentage {
+    margin-top: 1vw;
+    font-size: 1.5vw;
+  }
+  /* Style for green "Stay" and "Switch" text */
+  .which {
+    color: green;
+  }
+}
+/* Styles for dark mode */
+.dark-mode {
+  background-color: #333;
+  color: white;
+  
+  /* Update door background and text color for dark mode */
+  .door {
+    background-color: #444; /* Darker background color for doors */
+    color: white; /* White text color for doors in dark mode */
+  }
+}
+  /* Styles for the toggle button *//* Styles for the toggle button */
+
+
+.mode-switch {
+position: absolute;
+bottom: 1.5vw;
+left: 1vw;
+}
+
+/* Styles for the label */
+.mode-switch label {
+position: static;
+top: 0;
+right: 100%; /* Position label to the right of the button */
+width: auto;
+height: 100%;
+cursor: pointer;
+display: flex;
+align-items: center;
+margin-top: -1vw;
+margin-left: -0.5vw;
+font-size: 1.1vw
+}
+
+
+#pie-chart-container {
+  width: 15vw; /* Adjust the width as needed */
+  height: 15vw; /* Adjust the height as needed */
+  margin: auto 0vw; /* Center the chart vertically and add spacing on the right */
+  margin-top: 0vw
+}
+
+
+/* Styles for light mode label */
+.mode-switch input:checked + label::before {
+content: "Light Mode";
+}
+
+/* Styles for dark mode label */
+.mode-switch input:not(:checked) + label::before {
+content: "Dark Mode";
+}
+
+
+/* Styles for the history panel */
+#history {
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.5vw;
+  font-size: 1.2vw;
+  background-color: #f2f2f2;
+  border-radius: 0.3vw;
+  overflow-y: auto;
+  max-height: 100vh;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: width 0.5s ease-in-out; /* Add transition for smooth width changes */
+}
+
+#game-history-list {
+  margin-top: 1.5vw;
+}
+/* Styles for the toggle button */
+#toggle-history-btn {
+  position: absolute;
+  top: 1.5vw;
+  right: 1.5vw;
+  font-size: 1.2vw;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: 0.2vw solid #000;
+  border-radius: 0.3vw;
+  padding: 0.5vw 1vw;
+  height: 2.5vw; /* Set a fixed height */
+}
+ /* Styles for the toggle button */
+ #toggle-mode {
+  position: absolute;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  width: 30px;
+  height: 30px;
+ }
+
+  /* ... (other styles for the toggle button) ... */
+  #info-icon {
+position: absolute;
+top: 12vw;
+left: 50%;
+transform: translateX(-50%);
+cursor: pointer;
+
+
+
+}
+
+.tooltip {
+position: absolute;
+display: none;
+background-color: #333;
+color: white;
+padding: 0.5vw;
+border-radius: 0.3vw;
+font-size: 1.2vw;
+width: 20vw;
+z-index: 1;
+text-align: left; /* Adjust the text alignment */
+}
+
+#info-icon:hover .tooltip {
+display: block;
+}
+#info-icon::before {
+content: "?";
+font-size: 1.5vw;
+}
+
+
+
+
+
+#history.dark-mode {
+  background-color: #333;
+}
+
+#info-icon.dark-mode {
+  background-color: #333;
+}
+
+
+
+popup-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 2;
+}
+
+#popup-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+padding: 1.5vw;
+border-radius: 0.3vw;
+box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
+text-align: left;
+max-width: 60vw;
+overflow-y: auto;
+max-height: 80vh;
+font-size: 1vw; /* Adjust the font size as needed */
+}
+
+#close-popup {
+margin-top: 1.5vw;
+cursor: pointer;
+padding: 0.5vw 1vw;
+padding-right: 50vw;
+text-align: center;
+font-size: 1vw;
+}
+
+
+
+
+#popup-overlay.dark-mode {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the popup content in dark mode */
+#popup-content.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+
+
+.centered-image {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+height: auto;
+}
+
+.history-item p {
+margin: 0;
+}
+
+.history-item hr {
+margin: 0.5em 0;
+}
+
+.history-item p span {
+font-weight: bold;
+color: #888;
+}
+/* Additional styles for the tooltip in dark mode */
+.tooltip.dark-mode {
+  background-color: #333;
+
+
+}
+  
+

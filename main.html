@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monty Hall Problem Game</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="main.css"> 
+</head>
+<body>
+    
+  <div id="pie-chart-container">
+    <canvas id="winPercentageChart" width="400" height="400"></canvas>
+  </div>
+
+  <div id="game">
+    <h1>Monty Hall Problem</h1>
+    <p>Choose a door:</p>
+    <div id="doors">
+      <div class="door" onclick="chooseDoor(0)" id="door1">Door 1</div>
+      <div class="door" onclick="chooseDoor(1)" id="door2">Door 2</div>
+      <div class="door" onclick="chooseDoor(2)" id="door3">Door 3</div>
+    </div>
+    <p id="result"></p>
+    <div id="try-again-container">
+      <button id="try-again" onclick="resetGame()">Try Again</button>
+    </div>
+    <div id="percentage">Percentage of wins when switching: 0%</div>
+    
+  </div>
+
+
+
+
+  <div id="history">
+    <div id="game-history-list"></div>
+  </div>
+  <button id="toggle-history-btn" onclick="toggleHistoryPanel()">Toggle History</button>
+
+  
+  <div id="mode-switch" class="mode-switch">
+    <input type="checkbox" id="toggle-mode" />
+    <label for="toggle-mode"></label>
+  </div>
+  
+
+
+  <div id="info-icon">
+    <span class="tooltip">Learn about the Monty Hall problem</span>
+  </div>
+  
+
+
+
+  <div id="popup-overlay">
+    <div id="popup-content">
+      <h3>Monty Hall Problem</h3>
+      <p>
+        The Monty Hall Problem is a probability puzzle based on a game show scenario.
+        You are presented with three doors. Behind one of the doors is a car (the prize),
+        and behind the other two doors are goats (undesirable outcomes).
+        You choose one door. After your choice, the host, Monty Hall, who knows what is
+        behind each door, opens another door revealing a goat. You are then given the
+        option to either stick with your original choice or switch to the other unopened door.
+        Counterintuitively, it is statistically better to always switch doors, as it gives you
+        a higher chance of winning the car.
+      </p>
+      <img class="centered-image" src="c:\Users\Tom\Downloads\Monty_tree_door1.png" alt="Monty Hall Problem" />
+
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  </body>
